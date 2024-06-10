@@ -1,0 +1,59 @@
+﻿@page "/login"
+@model Main.Pages.loginModel
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/site.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="logform">
+        <img class="vector-1" src="~/Images/vector-11.svg" />
+        <img class="vector-2" src="~/Images/vector-12.svg" />
+        <div class="header">
+            <div class="frame-7">
+                <div class="frame-3">
+                    <a href="/"><div class="div">Головна</div></a>
+                    <a href="/kafedra"><div class="div">Кафедри</div></a>
+                    <a href="/disciplines"><div class="div">Дисципліни</div></a>
+                    <a href="/lectures"><div class="div">Викладачі</div></a>
+                    <a href="/grades"><div class="div">Оцінки</div></a>
+                </div>
+                <img class="user" src="~/Images/user0.svg" />
+            </div>
+        </div>
+        <div class="frame-45">
+            <div class="div2">Реєстрація</div>
+            <div class="frame-53">
+                <form id="registrationForm" method="post" enctype="multipart/form-data">
+                    <div class="frame-49">
+                        <div class="div3">Повне Ім'я'</div>
+                        <input type="text" id="fullname" name="User.FullName" required>
+                    </div>
+                    <div class="frame-50">
+                        <div class="div3">Пароль</div>
+                        <input type="text" id="password" name="User.Password" required>
+                    </div>
+                    <div class="frame-52">
+                        <div class="div3">Ваша роль</div>
+                        <select id="role" name="User.Role" required>
+                            <option value="Адмін">Адмін</option>
+                            <option value="Викладач">Викладач</option>
+                            <option value="Студент">Студент</option>
+                        </select>
+                    </div>
+                    <button type="submit">Зареєструватися</button>
+                </form>
+            </div>
+        </div>
+        <img class="group" src="~/Images/group0.svg" />
+        <img class="group2" src="~/Images/group1.svg" />
+        <img class="group3" src="~/Images/group2.svg" />
+        <img class="group4" src="~/Images/group3.svg" />
+    </div>
+</body>
+</html>

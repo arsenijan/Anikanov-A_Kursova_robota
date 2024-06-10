@@ -1,0 +1,225 @@
+﻿@page "/grades/{id:int}"
+@model Main.Pages.student_gradesModel
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/site.css">
+    <title>Document</title>
+    <style>
+        html, body {
+            width: 1920px;
+            height: 1080px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .button-container {
+            text-align: center;
+        }
+
+        .updateOlympiadBtn,
+        .deleteOlympiadBtn {
+            font-size: 16px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.3s;
+        }
+
+            .updateOlympiadBtn:hover,
+            .deleteOlympiadBtn:hover {
+                background-color: #45a049;
+            }
+    </style>
+</head>
+<body>
+    <div class="student-grades">
+        <div class="header">
+            <div class="frame-7">
+                <div class="frame-3">
+                    <a href="/"><div class="div">Головна</div></a>
+                    <a href="/kafedra"><div class="div">Кафедри</div></a>
+                    <a href="/disciplines"><div class="div">Дисципліни</div></a>
+                    <a href="/lectures"><div class="div">Викладачі</div></a>
+                    <a href="/grades"><div class="div">Оцінки</div></a>
+                </div>
+                <img class="user" src="~/Images/user0.svg" />
+            </div>
+        </div>
+        <div class="rectangle-7"></div>
+        <div class="div2">@Model?.Student?.FullName</div>
+        <div class="frame-43">
+            <div class="div3">Оцінки</div>
+            <div class="frame-32">
+                <div class="frame-30">
+                    @if (Model != null && Model.Student != null && Model.Student.Disciplines != null)
+                    {
+                        @foreach (var discipline in Model.Student.Disciplines)
+                        {
+                            <div class="div4">@discipline.Name</div>
+                            <div class="frame-29">
+                                <div class="frame-24">
+                                    <div class="frame-21">
+                                        <div class="id">@discipline.DisciplineId</div>
+                                        <div class="id">@discipline.Name</div>
+                                    </div>
+                                    @if (Model.Student.TasksList != null)
+                                    {
+                                        @foreach (var task in Model.Student.TasksList)
+                                        {
+                                            <div class="frame-23">
+                                                <div class="_1">@task.Name</div>
+                                                <div class="_1">@task.Grade</div>
+                                            </div>
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        }
+                    }
+                  
+                </div>
+            </div>
+        <div class="frame-44">
+            <div class="div5">Участь в конкурсах, олімпіадах</div>
+                @if (Model != null && Model.Student != null && Model.Student.Disciplines != null)
+                    {
+                @foreach (var olympiad in Model?.Student?.OlympiadParticipations)
+                {
+                    <div class="div">@olympiad.OlympiadName</div>
+                    <div class="div">@olympiad.Awards</div>
+                    <div class="div">@olympiad.Date</div>
+                    <div class="button-container">
+                        <button class="updateOlympiadBtn" data-id="@olympiad.OlympiadId">Оновити</button>
+                        <button class="deleteOlympiadBtn" data-id="@olympiad.OlympiadId">Видалити</button>
+                    </div>
+                }
+                }
+                
+        </div>
+            <button class="addOlympiadBtn" data-id="@Model?.Student?.UserId">Додати олімпіаду</button>
+
+            <div id="addOlympiadModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Додати олімпіаду</h2>
+                    <form method="post" id="addOlympiadForm" novalidate>
+                        <input type="hidden" id="studentId" name="Student.UserId" value="@Model?.Student?.UserId">
+                        <label for="olympiadName">Назва олімпіади:</label>
+                        <input type="text" id="olympiadName" name="Olympiad.OlympiadName" required>
+
+                        <label for="awards">Нагороди:</label>
+                        <input type="text" id="awards" name="Olympiad.Awards" required>
+
+                        <label for="date">Дата:</label>
+                        <input type="date" id="date" name="Olympiad.Date" required>
+
+                        <button id="myBtn" type="submit">Додати</button>
+                    </form>
+                </div>
+            </div>
+    </div>
+        <div id="updateOlympiadModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Оновити олімпіаду</h2>
+                <form method="post" id="updateOlympiadForm">
+                    <input type="hidden" id="updateOlympiadId" name="Olympiad.OlympiadId" value="">
+                    <label for="updateOlympiadName">Назва олімпіади:</label>
+                    <input type="text" id="updateOlympiadName" name="Olympiad.OlympiadName" required>
+
+                    <label for="updateAwards">Нагороди:</label>
+                    <input type="text" id="updateAwards" name="Olympiad.Awards" required>
+
+                    <label for="updateDate">Дата:</label>
+                    <input type="date" id="updateDate" name="Olympiad.Date" required>
+
+                    <button  type="submit">Оновити</button>
+                </form>
+            </div>
+        </div>
+</body>
+<script>
+    var deleteButtons = document.querySelectorAll('.deleteOlympiadBtn');
+
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            var olympiadId = this.getAttribute('data-id');
+            fetch(`https://localhost:7149/api/StudentOlympiads/delete/${olympiadId}`, {
+                method: 'DELETE'
+            })
+                .then(response => {
+                    if (response.ok) {
+                        location.reload();
+                    } else {
+                        console.error('Помилка під час видалення олімпіади:', response.status);
+                    }
+                })
+                .catch(error => {
+                    console.error('Виникла помилка:', error);
+                });
+        });
+    });
+
+    var updateButtons = document.querySelectorAll('.updateOlympiadBtn');
+
+  
+    
+
+    updateButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            var olympiadId = this.getAttribute('data-id');
+            document.getElementById("updateOlympiadId").value = olympiadId;
+            var olympiadId = document.getElementById('updateOlympiadId').value;
+            var modal = document.getElementById("updateOlympiadModal");
+            modal.style.display = "block";
+            var form = document.getElementById("updateOlympiadForm");
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                var formData = new FormData(form);
+            
+                fetch(`https://localhost:7149/api/StudentOlympiads/update/${olympiadId}`, {
+                    method: 'PUT',
+                    body: formData
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            location.reload();
+                        } else {
+                            console.error('Помилка під час оновлення олімпіади:', response.status);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Виникла помилка:', error);
+                    });
+            });
+        });
+    });
+</script>
+<script>
+    var addOlympiadModal = document.getElementById("addOlympiadModal");
+    var addOlympiadBtn = document.querySelector(".addOlympiadBtn");
+
+    addOlympiadBtn.addEventListener("click", function () {
+        addOlympiadModal.style.display = "block";
+    });
+
+    addOlympiadModal.querySelector(".close").addEventListener("click", function () {
+        addOlympiadModal.style.display = "none";
+    });
+
+    window.addEventListener("click", function (event) {
+        if (event.target == addOlympiadModal) {
+            addOlympiadModal.style.display = "none";
+        }
+    });
+</script>
+</html>

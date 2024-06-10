@@ -1,0 +1,348 @@
+﻿@page "/disciplines"
+@model Main.Pages.DisciplinesModel
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/site.css">
+    <title>Disciplines</title>
+    <style>
+        html, body {
+            width: 1920px;
+            height: 1080px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto;
+            background-color: rgb(0,0,0); 
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+            .close:hover,
+            .close:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+    </style>
+</head>
+<body>
+    <div class="disciplini">
+        <div class="header">
+            <div class="frame-7">
+                <div class="frame-3">
+                    <a href="/"><div class="div">Головна</div></a>
+                    <a href="/kafedra"><div class="div">Кафедри</div></a>
+                    <a href="/disciplines"><div class="div">Дисципліни</div></a>
+                    <a href="/lectures"><div class="div">Викладачі</div></a>
+                    <a href="/grades"><div class="div">Оцінки</div></a>
+                </div>
+                <img class="user" src="~/Images/user0.svg" />
+            </div>
+        </div>
+        <div class="frame-20">
+            <div class="div2">
+                Дисципліни на кафедрі Комп’ютерних наук та Інженерія програмного
+                забезпечення
+            </div>
+            <img class="vector-4" src="~/Images/vector-40.svg" />
+            <div class="frame-18">
+                <div class="frame-16">
+                    <div class="frame-14">
+                        @foreach (var discipline in Model?.Disciplines)
+                        {
+                            <img class="disciplinipic" src="@discipline.Source" />
+                            <div class="frame-15">
+                                <div class="div3">@discipline.Name</div>
+                                <div class="div4">
+                                    Викладачі: 
+                                    @foreach (var teacher in discipline?.Users.Where(x=>x.Role=="Викладач"))
+                                    {
+                                        @teacher.FullName;
+                                    }
+                                </div>
+                                <div class="div4">
+                                    Кафедра: @discipline.Department;
+                                </div>
+                                <button class="updateBtn" data-id="@discipline.DisciplineId">Оновити дані</button>
+                                <button class="deleteBtn" data-id="@discipline.DisciplineId">Видалити</button>
+                                <button class="addStudentBtn" data-id="@discipline.DisciplineId">Додати студента</button>
+                                <button class="addTeacherBtn" data-id="@discipline.DisciplineId">Додати викладача</button>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="myUpdateModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="updateForm" method="post" enctype="multipart/form-data">
+                <div>
+                    <label for="name">Назва дисципліни</label>
+                    <input type="text" id="name" name="Discipline.Name" required>
+                </div>
+                <div>
+                    <label for="tasks">Кількість завдань</label>
+                    <input type="text" id="tasks" name="Discipline.Tasks" required>
+                </div>
+                <div>
+                    <label for="department">Кафедра дисципліни</label>
+                    <input type="text" id="department" name="Discipline.Department" required>
+                </div>
+                <div>
+                    <label for="image">Додати картинку</label>
+                    <input type="file" id="image" name="Discipline.Image" required>
+                </div>
+                <input type="hidden" id="disciplineId" name="Discipline.DisciplineId" value="">
+                <button id="updateBtn" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <button id="myBtn">Open Form</button>
+    <div id="myAddModal" class="modal">
+
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form method="post" enctype="multipart/form-data">
+                <div>
+                    <label for="name">Назва дисципліни</label>
+                    <input type="text" id="name" name="Discipline.Name" required>
+                </div>
+                <div>
+                    <label for="tasks">Кількість завдань</label>
+                    <input type="text" id="tasks" name="Discipline.Tasks" required>
+                </div>
+                <div>
+                    <label for="department">Кафедра дисципліни</label>
+                    <input type="text" id="department" name="Discipline.Department" required>
+                </div>
+                <div>
+                    <label for="image">Додати картинку</label>
+                    <input type="file" id="image" name="Discipline.Image" required>
+                </div>
+                <button id="myBtn" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="addStudentModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="addStudentForm" method="post">
+                <div>
+                    <label for="studentId">ID студента</label>
+                    <input type="text" id="studentId" name="StudentId" required>
+                </div>
+                <input type="hidden" id="disciplineIdForStudent" name="DisciplineId" value="">
+                <button id="addStudentBtn" type="submit">Додати студента</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="addTeacherModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="addTeacherForm" method="post">
+                <div>
+                    <label for="teacherId">ID викладача</label>
+                    <input type="text" id="teacherId" name="TeacherId" required>
+                </div>
+                <input type="hidden" id="disciplineIdForTeacher" name="DisciplineId" value="">
+                <button id="addTeacherBtn" type="submit">Додати викладача</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        var updateModal = document.getElementById("myUpdateModal");
+        var addStudentModal = document.getElementById("addStudentModal");
+        var addTeacherModal = document.getElementById("addTeacherModal");
+
+        var closeBtns = document.getElementsByClassName("close");
+        var updateForm = document.getElementById("updateForm");
+        var addStudentForm = document.getElementById("addStudentForm");
+        var addTeacherForm = document.getElementById("addTeacherForm");
+
+
+        function openModal(modal) {
+            modal.style.display = "block";
+        }
+
+        function closeModal(modal) {
+            modal.style.display = "none";
+        }
+
+        Array.from(closeBtns).forEach(btn => {
+            btn.onclick = function () {
+                closeModal(btn.closest('.modal'));
+            }
+        });
+
+        window.onclick = function (event) {
+            if (event.target.classList.contains('modal')) {
+                closeModal(event.target);
+            }
+        }
+
+
+       
+        document.querySelectorAll(".updateBtn").forEach(button => {
+            button.addEventListener("click", function () {
+                var disciplineId = this.getAttribute("data-id");
+                document.getElementById("disciplineId").value = disciplineId;
+                openModal(myUpdateModal);
+            });
+        });
+        document.querySelectorAll(".addStudentBtn").forEach(button => {
+            button.addEventListener("click", function () {
+                var disciplineId = this.getAttribute("data-id");
+                document.getElementById("disciplineIdForStudent").value = disciplineId;
+                openModal(addStudentModal);
+            });
+        });
+
+        document.querySelectorAll(".addTeacherBtn").forEach(button => {
+            button.addEventListener("click", function () {
+                var disciplineId = this.getAttribute("data-id");
+                document.getElementById("disciplineIdForTeacher").value = disciplineId;
+                openModal(addTeacherModal);
+            });
+        });
+        document.querySelectorAll(".deleteBtn").forEach(button => {
+            button.addEventListener("click", function () {
+                var disciplineId = this.getAttribute("data-id");
+                var confirmation = confirm("Ви впевнені, що хочете видалити цю дисципліну?");
+                if (confirmation) {
+                    var apiUrl = "https://localhost:7149/api/Disciplines/delete/" + disciplineId;
+                    fetch(apiUrl, {
+                        method: "DELETE",
+                    })
+                        .then(response => {
+                            if (response.ok) {
+                                window.location.reload();
+                            } else {
+                                throw new Error("Server error. Please contact administrator.");
+                            }
+                        })
+                        .catch(error => {
+                            console.error("Error:", error);
+                        });
+                }
+            });
+        });
+        updateForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            var formData = new FormData(this);
+            var disciplineId = document.getElementById("disciplineId").value;
+            var apiUrl = "https://localhost:7149/api/Disciplines/update/" + disciplineId;
+            fetch(apiUrl, {
+                method: "PUT",
+                body: formData
+            })
+                .then(response => {
+                    if (response.ok) {
+                        closeModal(updateModal);
+                        window.location.reload(); 
+                    } else {
+                        throw new Error("Server error. Please contact administrator.");
+                    }
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                 
+                });
+        });
+
+        addStudentForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            var formData = new FormData(this);
+            var disciplineId = document.getElementById("disciplineIdForStudent").value;
+            var apiUrl = "https://localhost:7149/api/Disciplines/update/" + disciplineId;
+            fetch(apiUrl, {
+                method: "PUT",
+                body: formData
+            })
+                .then(response => {
+                    if (response.ok) {
+                        closeModal(addStudentModal);
+                        window.location.reload();
+                    } else {
+                        throw new Error("Server error. Please contact administrator.");
+                    }
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                });
+        });
+
+        addTeacherForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            var formData = new FormData(this);
+            var disciplineId = document.getElementById("disciplineIdForTeacher").value;
+            var apiUrl = "https://localhost:7149/api/Disciplines/update/" + disciplineId;
+            fetch(apiUrl, {
+                method: "PUT",
+                body: formData
+            })
+                .then(response => {
+                    if (response.ok) {
+                        closeModal(addTeacherModal);
+                        window.location.reload();
+                    } else {
+                        throw new Error("Server error. Please contact administrator.");
+                    }
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                });
+        });
+
+        
+    </script>
+
+    <script>
+        var modal = document.getElementById("myAddModal");
+
+        var btn = document.getElementById("myBtn");
+
+     
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+     
+    </script>
+
+</body>
+</html>

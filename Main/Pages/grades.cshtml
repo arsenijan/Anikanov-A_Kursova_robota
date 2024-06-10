@@ -1,0 +1,250 @@
+﻿@page "/grades"
+@model Main.Pages.gradesModel
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/site.css">
+    <title>Document</title>
+    <style>
+        html, body {
+            width: 1920px;
+            height: 1080px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding-top: 60px;
+        }
+
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+            .close:hover,
+            .close:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+    </style>
+</head>
+<body>
+    <div class="grades">
+        <div class="header">
+            <div class="frame-7">
+                <div class="frame-3">
+                    <a href="/"><div class="div">Головна</div></a>
+                    <a href="/kafedra"><div class="div">Кафедри</div></a>
+                    <a href="/disciplines"><div class="div">Дисципліни</div></a>
+                    <a href="/lectures"><div class="div">Викладачі</div></a>
+                    <a href="/grades"><div class="div">Оцінки</div></a>
+                </div>
+                <img class="user" src="~/Images/user0.svg" />
+            </div>
+        </div>
+        <div class="frame-33">
+            <div class="frame-43">
+                <div class="div2">Оцінки студентів із ІПЗ</div>
+                <div class="frame-32">
+                    <div class="frame-30">
+                        @if (Model != null && Model.Disciplines != null)
+                        {
+                            @foreach (var discipline in Model?.Disciplines)
+                            {
+                                <div class="div3">@discipline.Name</div>
+                                @foreach (var student in discipline.Users.Where(x => x.Role == "Студент"))
+                                {
+                                    <div class="frame-29">
+                                        <div class="frame-24">
+                                            <div class="frame-21">
+                                                <div class="id">@student.UserId</div>
+                                            </div>
+                                            <div class="frame-22">
+                                                <div class="div4">@student.FullName</div>
+                                            </div>
+                                            <div class="frame-23">
+                                                @if (student?.TasksList != null && student.TasksList.Any())
+                                                {
+                                                    @foreach (var tasks in student?.TasksList?.ToList())
+                                                    {
+                                                        <div class="_1">@tasks.Name</div>
+                                                        <div>@tasks.Grade</div>
+                                                        <button class="updateTaskBtn" data-id="@tasks.Id">Змінити</button>
+                                                        <button class="deleteTaskBtn" data-id="@tasks.Id">Видалити</button>
+                                                    }
+                                                }
+                                            </div>
+                                            <button class="addTaskBtn" data-discipline="@discipline.DisciplineId" data-student="@student.UserId">Додати завдання</button>
+                                        </div>
+                                        <div class="frame-28">
+                                            <div class="frame-212"></div>
+                                            <div class="frame-222"></div>
+                                            <div class="frame-232"></div>
+                                            <div class="frame-243"></div>
+                                            <div class="frame-252"></div>
+                                            <div class="frame-262"></div>
+                                            <div class="frame-272"></div>
+                                        </div>
+                                    </div>
+                                }
+
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="addTaskModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Додати завдання</h2>
+            <form method="post" id="addTaskForm">
+                <input type="hidden" id="addTaskDisciplineId" name="DisciplineId" value="">
+                <input type="hidden" id="addTaskStudentId" name="StudentId" value="">
+
+                <label for="addTaskName">Назва завдання:</label>
+                <input type="text" id="addTaskName" name="Task.Name" required>
+
+                <label for="addTaskGrade">Оцінка:</label>
+                <input type="text" id="addTaskGrade" name="Task.Grade" required>
+
+                <button type="submit">Додати</button>
+            </form>
+        </div>
+    </div>
+    <div id="updateTaskModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Оновити завдання</h2>
+            <form method="post" id="updateTaskForm">
+                <input type="hidden" id="updateTaskId" name="Task.Id" value="">
+
+                <label for="updateTaskName">Назва завдання:</label>
+                <input type="text" id="updateTaskName" name="Task.Name" required>
+
+                <label for="updateTaskGrade">Оцінка:</label>
+                <input type="text" id="updateTaskGrade" name="Task.Grade" required>
+
+                <button type="submit">Оновити</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+
+    var addTaskBtns = document.querySelectorAll('.addTaskBtn');
+    var addTaskModal = document.getElementById("addTaskModal");
+    var closeBtns = document.getElementsByClassName("close");
+
+    addTaskBtns.forEach(button => {
+        button.addEventListener('click', function () {
+            var disciplineId = this.getAttribute("data-discipline");
+            var studId = this.getAttribute("data-student");
+            document.getElementById("addTaskDisciplineId").value = disciplineId;
+            document.getElementById("addTaskStudentId").value = studId;
+            addTaskModal.style.display = "block";
+        });
+    });
+
+    function closeModal(modal) {
+        modal.style.display = "none";
+    }
+
+    Array.from(closeBtns).forEach(btn => {
+        btn.onclick = function () {
+            closeModal(btn.closest('.modal'));
+        }
+    });
+
+    window.onclick = function (event) {
+        if (event.target.classList.contains('modal')) {
+            closeModal(event.target);
+        }
+    }
+
+    var updateTaskBtns = document.querySelectorAll('.updateTaskBtn');
+
+    updateTaskBtns.forEach(button => {
+        button.addEventListener('click', function () {
+            var taskId = this.getAttribute('data-id');
+            document.getElementById("updateTaskId").value = taskId;
+            var modal = document.getElementById("updateTaskModal");
+            modal.style.display = "block";
+
+            var form = document.getElementById("updateTaskForm");
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                var formData = new FormData(form);
+                fetch(`https://localhost:7149/api/Tasks/update/${taskId}`, {
+                    method: 'PUT',
+                    body: formData
+                 })
+                .then(response => {
+                    if (response.ok) {
+                        location.reload();
+                    } else {
+                        console.error('Помилка під час оновлення завдання:', response.status);
+                    }
+                })
+                .catch(error => {
+                    console.error('Виникла помилка:', error);
+                });
+        });
+    });
+     });
+
+
+    var deleteTaskBtns = document.querySelectorAll('.deleteTaskBtn');
+
+    deleteTaskBtns.forEach(button => {
+        button.addEventListener('click', function () {
+            var taskId = this.getAttribute('data-id');
+            if (confirm("Ви впевнені, що хочете видалити це завдання?")) {
+                fetch(`https://localhost:7149/api/Tasks/delete/${taskId}`, {
+                    method: 'DELETE'
+                 })
+            .then(response => {
+                if (response.ok) {
+                    location.reload();
+                } else {
+                    console.error('Помилка під час видалення завдання:', response.status);
+                }
+            })
+            .catch(error => {
+                console.error('Виникла помилка:', error);
+            });
+    }
+         });
+     });
+</script>

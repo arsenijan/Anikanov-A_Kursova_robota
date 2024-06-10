@@ -1,0 +1,130 @@
+C:\Users\Артем\source\repos\API\Main\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Артем\source\repos\API\Main\bin\Debug\net8.0\appsettings.json
+C:\Users\Артем\source\repos\API\Main\bin\Debug\net8.0\Main.staticwebassets.runtime.json
+C:\Users\Артем\source\repos\API\Main\bin\Debug\net8.0\Main.exe
+C:\Users\Артем\source\repos\API\Main\bin\Debug\net8.0\Main.deps.json
+C:\Users\Артем\source\repos\API\Main\bin\Debug\net8.0\Main.runtimeconfig.json
+C:\Users\Артем\source\repos\API\Main\bin\Debug\net8.0\Main.dll
+C:\Users\Артем\source\repos\API\Main\bin\Debug\net8.0\Main.pdb
+C:\Users\Артем\source\repos\API\Main\obj\Debug\net8.0\Main.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Артем\source\repos\API\Main\obj\Debug\net8.0\Main.AssemblyInfoInputs.cache
+C:\Users\Артем\source\repos\API\Main\obj\Debug\net8.0\Main.AssemblyInfo.cs
+C:\Users\Артем\source\repos\API\Main\obj\Debug\net8.0\Main.csproj.CoreCompileInputs.cache
+C:\Users\Артем\source\repos\API\Main\obj\Debug\net8.0\Main.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Артем\source\repos\API\Main\obj\Debug\net8.0\Main.RazorAssemblyInfo.cache
+C:\Users\Артем\source\repos\API\Main\obj\Debug\net8.0\Main.RazorAssemblyInfo.cs
+C:\Users\Артем\source\repos\API\Main\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Артем\source\repos\API\Main\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Артем\source\repos\API\Main\obj\Debug\net8.0\staticwebassets\msbuild.Main.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Артем\source\repos\API\Main\obj\Debug\net8.0\staticwebassets\msbuild.build.Main.props
+C:\Users\Артем\source\repos\API\Main\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Main.props
+C:\Users\Артем\source\repos\API\Main\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Main.props
+C:\Users\Артем\source\repos\API\Main\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\Артем\source\repos\API\Main\obj\Debug\net8.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Артем\source\repos\API\Main\obj\Debug\net8.0\scopedcss\bundle\Main.styles.css
+C:\Users\Артем\source\repos\API\Main\obj\Debug\net8.0\scopedcss\projectbundle\Main.bundle.scp.css
+C:\Users\Артем\source\repos\API\Main\obj\Debug\net8.0\Main.dll
+C:\Users\Артем\source\repos\API\Main\obj\Debug\net8.0\refint\Main.dll
+C:\Users\Артем\source\repos\API\Main\obj\Debug\net8.0\Main.pdb
+C:\Users\Артем\source\repos\API\Main\obj\Debug\net8.0\Main.genruntimeconfig.cache
+C:\Users\Артем\source\repos\API\Main\obj\Debug\net8.0\ref\Main.dll
+C:\Users\Артем\source\repos\API\Main\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\Артем\source\repos\API\Main\obj\Debug\net8.0\Main.csproj.AssemblyReference.cache
+C:\Users\Артем\source\repos\API\Main\obj\Debug\net8.0\Main.csproj.Up2Date
+C:\Users\Артем\source\repos\API\Main\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Артем\source\repos\API\Main\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Артем\source\repos\API\Main\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Артем\source\repos\API\Main\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Артем\source\repos\API\Main\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Артем\source\repos\API\Main\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Артем\source\repos\API\Main\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Артем\source\repos\API\Main\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Артем\source\repos\API\Main\bin\Debug\net8.0\API.deps.json
+C:\Users\Артем\source\repos\API\Main\bin\Debug\net8.0\API.runtimeconfig.json
+C:\Users\Артем\source\repos\API\Main\bin\Debug\net8.0\API.staticwebassets.runtime.json
+C:\Users\Артем\source\repos\API\Main\bin\Debug\net8.0\API.exe
+C:\Users\Артем\source\repos\API\Main\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Артем\source\repos\API\Main\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Артем\source\repos\API\Main\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Артем\source\repos\API\Main\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.UI.dll
+C:\Users\Артем\source\repos\API\Main\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Артем\source\repos\API\Main\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Артем\source\repos\API\Main\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Артем\source\repos\API\Main\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\Артем\source\repos\API\Main\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Артем\source\repos\API\Main\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\Артем\source\repos\API\Main\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\Артем\source\repos\API\Main\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\Артем\source\repos\API\Main\bin\Debug\net8.0\MySqlConnector.dll
+C:\Users\Артем\source\repos\API\Main\bin\Debug\net8.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\Артем\source\repos\API\Main\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Артем\source\repos\API\Main\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Артем\source\repos\API\Main\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Артем\source\repos\API\Main\bin\Debug\net8.0\API.dll
+C:\Users\Артем\source\repos\API\Main\bin\Debug\net8.0\API.pdb
+C:\Users\Артем\source\repos\API\Main\obj\Debug\net8.0\Main.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\bin\Debug\net8.0\appsettings.json
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\bin\Debug\net8.0\API.deps.json
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\bin\Debug\net8.0\API.runtimeconfig.json
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\bin\Debug\net8.0\API.staticwebassets.runtime.json
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\bin\Debug\net8.0\API.exe
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\bin\Debug\net8.0\Main.staticwebassets.runtime.json
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\bin\Debug\net8.0\Main.exe
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\bin\Debug\net8.0\Main.deps.json
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\bin\Debug\net8.0\Main.runtimeconfig.json
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\bin\Debug\net8.0\Main.dll
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\bin\Debug\net8.0\Main.pdb
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.UI.dll
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\bin\Debug\net8.0\MySqlConnector.dll
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\bin\Debug\net8.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\bin\Debug\net8.0\API.dll
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\bin\Debug\net8.0\API.pdb
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\obj\Debug\net8.0\Main.csproj.AssemblyReference.cache
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\obj\Debug\net8.0\Main.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\obj\Debug\net8.0\Main.AssemblyInfoInputs.cache
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\obj\Debug\net8.0\Main.AssemblyInfo.cs
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\obj\Debug\net8.0\Main.csproj.CoreCompileInputs.cache
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\obj\Debug\net8.0\Main.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\obj\Debug\net8.0\Main.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\obj\Debug\net8.0\Main.RazorAssemblyInfo.cache
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\obj\Debug\net8.0\Main.RazorAssemblyInfo.cs
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\obj\Debug\net8.0\staticwebassets\msbuild.Main.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\obj\Debug\net8.0\staticwebassets\msbuild.build.Main.props
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Main.props
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Main.props
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\obj\Debug\net8.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\obj\Debug\net8.0\scopedcss\bundle\Main.styles.css
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\obj\Debug\net8.0\scopedcss\projectbundle\Main.bundle.scp.css
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\obj\Debug\net8.0\Main.csproj.Up2Date
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\obj\Debug\net8.0\Main.dll
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\obj\Debug\net8.0\refint\Main.dll
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\obj\Debug\net8.0\Main.pdb
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\obj\Debug\net8.0\Main.genruntimeconfig.cache
+C:\Users\Арсений\Desktop\y\2к2с\курсова робота\API\Main\obj\Debug\net8.0\ref\Main.dll
